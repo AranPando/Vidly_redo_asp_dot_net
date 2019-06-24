@@ -1,0 +1,25 @@
+﻿@model VidlyRedo.ViewModels.RandomMovieViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    @Model.movie.name (@Model.movie.year)
+    @if (Model.customers.Count > 4)
+    {
+        <text>(HOT)</text>
+    }
+</h2>
+
+<p>Renting movie:</p>
+<ul>
+    @foreach (var customer in Model.customers)
+    {
+        <li>@customer.name</li>
+    }
+
+</ul>
+
+@*@DateTime.Today.ToShortDateString().Split(new char[] { '/' })[2]*@
+

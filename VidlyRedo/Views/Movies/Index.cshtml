@@ -1,0 +1,28 @@
+﻿@model VidlyRedo.ViewModels.IndexMovieViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+@if (Model.Movies.Count <= 0)
+{
+    <h3>We don't have any movies yet</h3>
+}
+else
+{
+    <table>
+        <tr>
+            <td>Movies</td>
+        </tr>
+        @foreach (var movie in Model.Movies)
+        {
+            var moviename = movie.name + " (" + movie.year + ")";
+            <tr>
+                <td>@Html.ActionLink(moviename, "ViewMovie", "Movies", new { name = movie.name }, null)</td>
+            </tr>
+        }
+
+    </table>
+}
+

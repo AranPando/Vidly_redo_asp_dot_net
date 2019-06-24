@@ -1,0 +1,27 @@
+﻿@model VidlyRedo.ViewModels.IndexCustomerViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+@if (Model.Customers.Count <= 0)
+{
+    <h3>We don't have any customers yet</h3>
+}
+else
+{
+    <table>
+        <tr>
+            <td>Customers</td>
+        </tr>
+        @foreach (var cust in Model.Customers)
+        {
+            var custname = cust.name + " (" + cust.id + ")";
+            <tr>
+                <td>@Html.ActionLink(custname,"ViewCustomer","Customers", new { id = cust.id }, null)</td>
+            </tr>
+        }
+
+    </table>
+}
