@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,21 +11,36 @@ namespace VidlyRedo.Controllers
 {
     public class CustomersController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public CustomersController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Customers
         [Route("customers")]
         public ActionResult Index()
         {
             IndexCustomerViewModel custs = new IndexCustomerViewModel();
-            custs.Customers = GlobalVariables.GetCustomers();
+            custs.Customers = _context.Customers.Include(c => c.MembershipType).ToList();
             return View(custs);
         }
 
         [Route("Customers/{id}")]
         public ActionResult ViewCustomer(int id)
         {
-            Customer Cust = GlobalVariables.GetCustomerId(id);
-            if (Cust == null) return HttpNotFound("Invalid customer id");
-            return View(Cust);
+            Customer cust = _context.Customers.SingleOrDefault(c => c.id == id);
+
+            if (cust == null)
+                return HttpNotFound("Invalid customer id");
+
+            return View(cust);
         }
 
         [Route("Customers/add/{id}/{name}")]

@@ -14,12 +14,14 @@ else
     <table>
         <tr>
             <td>Customers</td>
+            <td>Discount Rate</td>
         </tr>
         @foreach (var cust in Model.Customers)
         {
             var custname = cust.name + " (" + cust.id + ")";
             <tr>
                 <td>@Html.ActionLink(custname,"ViewCustomer","Customers", new { id = cust.id }, null)</td>
+                <td>@cust.MembershipType.DiscountRate%</td>
             </tr>
         }
 

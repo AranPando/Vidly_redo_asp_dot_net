@@ -24,7 +24,7 @@ namespace VidlyRedo.Managers
         {
             if (id < 0 || String.IsNullOrWhiteSpace(name)) return null;
 
-            Customer cust = new Customer(id, name);
+            Customer cust = new Customer();
 
             this.Customer.Add(cust);
 
