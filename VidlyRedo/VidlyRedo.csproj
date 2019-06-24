@@ -197,6 +197,14 @@
     <Compile Include="Migrations\201906240528189_ApplyAnnotationsToCustomerName.Designer.cs">
       <DependentUpon>201906240528189_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906240605521_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\201906240605521_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>201906240605521_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906240607007_AddMembershipNamesToExistingDb.cs" />
+    <Compile Include="Migrations\201906240607007_AddMembershipNamesToExistingDb.Designer.cs">
+      <DependentUpon>201906240607007_AddMembershipNamesToExistingDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -212,6 +220,7 @@
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-superhero.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -304,6 +313,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906240528189_ApplyAnnotationsToCustomerName.resx">
       <DependentUpon>201906240528189_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906240605521_AddNameToMembershipType.resx">
+      <DependentUpon>201906240605521_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906240607007_AddMembershipNamesToExistingDb.resx">
+      <DependentUpon>201906240607007_AddMembershipNamesToExistingDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
