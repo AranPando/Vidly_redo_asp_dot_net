@@ -8,3 +8,13 @@
 
 <h3>@Model.name</h3>
 
+<ul>
+    <li>Subscription: @Model.MembershipType.Name</li>
+
+    @if (Model.dob != null)
+    {
+        <li>@Model.dob.ToString()</li>
+    }
+</ul>
+
+

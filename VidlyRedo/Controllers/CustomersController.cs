@@ -28,14 +28,16 @@ namespace VidlyRedo.Controllers
         public ActionResult Index()
         {
             IndexCustomerViewModel custs = new IndexCustomerViewModel();
+
             custs.Customers = _context.Customers.Include(c => c.MembershipType).ToList();
+
             return View(custs);
         }
 
         [Route("Customers/{id}")]
         public ActionResult ViewCustomer(int id)
         {
-            Customer cust = _context.Customers.SingleOrDefault(c => c.id == id);
+            Customer cust = _context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.id == id);
 
             if (cust == null)
                 return HttpNotFound("Invalid customer id");

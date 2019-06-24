@@ -205,6 +205,14 @@
     <Compile Include="Migrations\201906240607007_AddMembershipNamesToExistingDb.Designer.cs">
       <DependentUpon>201906240607007_AddMembershipNamesToExistingDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906240639282_AddDOBToCustomer.cs" />
+    <Compile Include="Migrations\201906240639282_AddDOBToCustomer.Designer.cs">
+      <DependentUpon>201906240639282_AddDOBToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906240719323_PopulateDobField.cs" />
+    <Compile Include="Migrations\201906240719323_PopulateDobField.Designer.cs">
+      <DependentUpon>201906240719323_PopulateDobField.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -319,6 +327,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906240607007_AddMembershipNamesToExistingDb.resx">
       <DependentUpon>201906240607007_AddMembershipNamesToExistingDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906240639282_AddDOBToCustomer.resx">
+      <DependentUpon>201906240639282_AddDOBToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906240719323_PopulateDobField.resx">
+      <DependentUpon>201906240719323_PopulateDobField.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
