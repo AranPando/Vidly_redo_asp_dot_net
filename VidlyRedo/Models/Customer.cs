@@ -11,6 +11,7 @@ namespace VidlyRedo.Models
         public int id { get; set; }
         [Required]
         public string name { get; set; }
+        public DateTime dob { get; set; }
         public bool isSubscribedToNewsLetter { get; set; }
         public MembershipType MembershipType { get; set; }
         public byte MembershipTypeId { get; set; }
